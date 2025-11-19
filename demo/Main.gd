@@ -35,6 +35,18 @@ func _on_share_viewport_button_pressed() -> void:
 	share.share_viewport(get_viewport(), shared_title, shared_subject, _text_edit.text)
 
 
+func _on_share_share_completed(a_activity_type: String) -> void:
+	_print_to_screen("Share completed by %s" % a_activity_type)
+
+
+func _on_share_share_canceled() -> void:
+	_print_to_screen("Share canceled")
+
+
+func _on_share_share_failed(a_error_message: String) -> void:
+	_print_to_screen("Share failed due to %s" % a_error_message)
+
+
 func _print_to_screen(a_message: String, a_is_error: bool = false) -> void:
 	_label.add_text("%s\n\n" % a_message)
 	if a_is_error:

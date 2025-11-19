@@ -2,15 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SharePlugin.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:./Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:../Pods/Pods.xcodeproj">
+      location = "self:">
    </FileRef>
    <FileRef
       location = "group:.">
+   </FileRef>
+   <FileRef
+      location = "group:../Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
