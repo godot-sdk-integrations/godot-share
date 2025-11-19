@@ -22,6 +22,7 @@ Share Plugin allows sharing of text and images on Android and iOS platforms.
 ## <img src="addon/icon.png" width="20"> Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
+- [Signals](#signals)
 - [Platform-Specific Notes](#platform-specific-notes)
 - [Links](#links)
 - [All Plugins](#all-plugins)
@@ -62,6 +63,18 @@ Add a `Share` node to your scene and follow the following steps:
 		- `share_image(full_path_for_saved_image_file, title, subject, content)`
 				- Note that the image you want to share must be saved under the `user://` virtual directory in order to be accessible. The `OS.get_user_data_dir()` method can be used to get the absolute path for the `user://` directory. See the implementation of `share_viewport()` method for sample code.
 		- `share_viewport(viewport, title, subject, content)`
+
+---
+
+<a name="signals"></a>
+
+## <img src="addon/icon.png" width="20"> Signals
+
+- `share_completed`: Emitted when shared item is sent on iOS. On Android, emitted when a share target is selected on the chooser screen.
+- `share_canceled`: Emitted when user does not send shared item on iOS. On Android, emitted when user returns to app without making a selection on chooser screen within threshold milliseconds (default threshold is 5000ms).
+- `share_failed`: Emitted when a failure that prevents sharing occurs.
+
+*Note: On Android, `share_completed` signal does not mean that the user actually sent the shared item.*
 
 ---
 
