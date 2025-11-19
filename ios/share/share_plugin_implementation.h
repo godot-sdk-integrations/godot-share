@@ -21,8 +21,6 @@ class SharePlugin : public Object {
 	GDCLASS(SharePlugin, Object);
 	
 	static void _bind_methods();
-
-	static NSString* toNsString(const String &godotString);
 	
 public:
 

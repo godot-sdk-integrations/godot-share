@@ -7,8 +7,16 @@ class_name Share extends Node
 
 const PLUGIN_SINGLETON_NAME: String = "@pluginName@"
 
+signal share_completed(activity_type: String)
+signal share_failed(error_message: String)
+signal share_canceled()
+
 const MIME_TYPE_TEXT: String = "text/plain"
 const MIME_TYPE_IMAGE: String = "image/*"
+
+const SIGNAL_NAME_SHARE_COMPLETED: String = "share_completed";
+const SIGNAL_NAME_SHARE_FAILED: String = "share_failed";
+const SIGNAL_NAME_SHARE_CANCELED: String = "share_canceled";
 
 @onready var _temp_image_path: String = OS.get_user_data_dir() + "/tmp_share_img_path.png"
 
@@ -28,8 +36,15 @@ func _update_plugin() -> void:
 	if _plugin_singleton == null:
 		if Engine.has_singleton(PLUGIN_SINGLETON_NAME):
 			_plugin_singleton = Engine.get_singleton(PLUGIN_SINGLETON_NAME)
+			_connect_signals()
 		elif not OS.has_feature("editor_hint"):
 			log_error("%s singleton not found!" % PLUGIN_SINGLETON_NAME)
+
+
+func _connect_signals() -> void:
+	_plugin_singleton.connect(SIGNAL_NAME_SHARE_COMPLETED, _on_share_completed)
+	_plugin_singleton.connect(SIGNAL_NAME_SHARE_FAILED, _on_share_failed)
+	_plugin_singleton.connect(SIGNAL_NAME_SHARE_CANCELED, _on_share_canceled)
 
 
 func share_text(a_title: String, a_subject: String, a_content: String) -> void:
@@ -77,6 +92,18 @@ func share_file(a_path: String, a_mime_type: String, a_title: String, a_subject:
 		)
 	else:
 		log_error("%s plugin not initialized" % PLUGIN_SINGLETON_NAME)
+
+
+func _on_share_completed(a_activity_type: String) -> void:
+	emit_signal(SIGNAL_NAME_SHARE_COMPLETED, a_activity_type)
+
+
+func _on_share_failed(a_error_message: String) -> void:
+	emit_signal(SIGNAL_NAME_SHARE_FAILED, a_error_message)
+
+
+func _on_share_canceled() -> void:
+	emit_signal(SIGNAL_NAME_SHARE_CANCELED)
 
 
 static func log_error(a_description: String) -> void:

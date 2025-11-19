@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1088D60F837176443D105A64 /* Pods_SharePlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BFE312099ABF963DE4BA474 /* Pods_SharePlugin.framework */; };
+		0793DB442ECC5D6B00679D5D /* ActiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0793DB432ECC5D6B00679D5D /* ActiveViewController.swift */; };
+		515DBA0925EE9E1E00187A4B /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515DBA0825EE9E1E00187A4B /* Share.swift */; };
 		90CAAA9924E71FF10013969F /* share_plugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 90CAAA9824E71FF10013969F /* share_plugin.mm */; };
 		90CAAAA424E724C50013969F /* share_plugin_implementation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 90CAAAA324E724C50013969F /* share_plugin_implementation.mm */; };
+		94A1B0B2910D06DA0F4D3D3C /* Pods_share_plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380C444E6383B0C8ACA7CA7D /* Pods_share_plugin.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,14 +27,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4BFE312099ABF963DE4BA474 /* Pods_SharePlugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SharePlugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D81D34EAF997FFC79223B20 /* Pods-SharePlugin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharePlugin.debug.xcconfig"; path = "Target Support Files/Pods-SharePlugin/Pods-SharePlugin.debug.xcconfig"; sourceTree = "<group>"; };
-		5FBC74EE68B1374C28F1A0BD /* Pods-SharePlugin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SharePlugin.release.xcconfig"; path = "Target Support Files/Pods-SharePlugin/Pods-SharePlugin.release.xcconfig"; sourceTree = "<group>"; };
-		90CAAA9424E71FF10013969F /* libSharePlugin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSharePlugin.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0793DB432ECC5D6B00679D5D /* ActiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveViewController.swift; sourceTree = "<group>"; };
+		1A3D1E30D9DC57319C20B62B /* Pods-share_plugin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share_plugin.release.xcconfig"; path = "Target Support Files/Pods-share_plugin/Pods-share_plugin.release.xcconfig"; sourceTree = "<group>"; };
+		380C444E6383B0C8ACA7CA7D /* Pods_share_plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_share_plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		403D7C7BCFBA671DEF15AE95 /* Pods-share_plugin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share_plugin.debug.xcconfig"; path = "Target Support Files/Pods-share_plugin/Pods-share_plugin.debug.xcconfig"; sourceTree = "<group>"; };
+		515DBA0825EE9E1E00187A4B /* Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
+		90CAAA9424E71FF10013969F /* libshare_plugin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libshare_plugin.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		90CAAA9724E71FF10013969F /* share_plugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = share_plugin.h; sourceTree = "<group>"; };
 		90CAAA9824E71FF10013969F /* share_plugin.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = share_plugin.mm; sourceTree = "<group>"; };
 		90CAAAA324E724C50013969F /* share_plugin_implementation.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = share_plugin_implementation.mm; sourceTree = "<group>"; };
 		90CAAAA524E724D00013969F /* share_plugin_implementation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = share_plugin_implementation.h; sourceTree = "<group>"; };
+		AAE936A0178A8EA9BB753CEA /* Pods-share_plugin_implementation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share_plugin_implementation.debug.xcconfig"; path = "Target Support Files/Pods-inapp_review_plugin/Pods-share_plugin_implementation.debug.xcconfig"; sourceTree = "<group>"; };
+		D5F7A9D28867FD798F31BF3B /* Pods-share_plugin_implementation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share_plugin_implementation.release.xcconfig"; path = "Target Support Files/Pods-inapp_review_plugin/Pods-share_plugin_implementation.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,56 +46,59 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1088D60F837176443D105A64 /* Pods_SharePlugin.framework in Frameworks */,
+				94A1B0B2910D06DA0F4D3D3C /* Pods_share_plugin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		694A6A1D79299D91BA390222 /* Pods */ = {
+		66EA7AD27171A8F93A267403 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4D81D34EAF997FFC79223B20 /* Pods-SharePlugin.debug.xcconfig */,
-				5FBC74EE68B1374C28F1A0BD /* Pods-SharePlugin.release.xcconfig */,
+				403D7C7BCFBA671DEF15AE95 /* Pods-share_plugin.debug.xcconfig */,
+				1A3D1E30D9DC57319C20B62B /* Pods-share_plugin.release.xcconfig */,
+				AAE936A0178A8EA9BB753CEA /* Pods-share_plugin_implementation.debug.xcconfig */,
+				D5F7A9D28867FD798F31BF3B /* Pods-share_plugin_implementation.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		90CAAA8B24E71FF10013969F = {
 			isa = PBXGroup;
 			children = (
-				90CAAA9624E71FF10013969F /* SharePlugin */,
+				90CAAA9624E71FF10013969F /* share */,
 				90CAAA9524E71FF10013969F /* Products */,
 				90CAAAA824E72A8A0013969F /* Frameworks */,
-				694A6A1D79299D91BA390222 /* Pods */,
+				66EA7AD27171A8F93A267403 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		90CAAA9524E71FF10013969F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				90CAAA9424E71FF10013969F /* libSharePlugin.a */,
+				90CAAA9424E71FF10013969F /* libshare_plugin.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		90CAAA9624E71FF10013969F /* SharePlugin */ = {
+		90CAAA9624E71FF10013969F /* share */ = {
 			isa = PBXGroup;
 			children = (
+				0793DB432ECC5D6B00679D5D /* ActiveViewController.swift */,
 				90CAAA9724E71FF10013969F /* share_plugin.h */,
 				90CAAA9824E71FF10013969F /* share_plugin.mm */,
 				90CAAAA524E724D00013969F /* share_plugin_implementation.h */,
 				90CAAAA324E724C50013969F /* share_plugin_implementation.mm */,
+				515DBA0825EE9E1E00187A4B /* Share.swift */,
 			);
-			path = SharePlugin;
+			path = share;
 			sourceTree = "<group>";
 		};
 		90CAAAA824E72A8A0013969F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4BFE312099ABF963DE4BA474 /* Pods_SharePlugin.framework */,
+				380C444E6383B0C8ACA7CA7D /* Pods_share_plugin.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -97,11 +106,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		90CAAA9324E71FF10013969F /* SharePlugin */ = {
+		90CAAA9324E71FF10013969F /* share_plugin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 90CAAA9D24E71FF10013969F /* Build configuration list for PBXNativeTarget "SharePlugin" */;
+			buildConfigurationList = 90CAAA9D24E71FF10013969F /* Build configuration list for PBXNativeTarget "share_plugin" */;
 			buildPhases = (
-				E26E701D19584026D1F30A1F /* [CP] Check Pods Manifest.lock */,
+				DD9BF3CC2255FDE9321FE7D1 /* [CP] Check Pods Manifest.lock */,
 				90CAAA9024E71FF10013969F /* Sources */,
 				90CAAA9124E71FF10013969F /* Frameworks */,
 				90CAAA9224E71FF10013969F /* CopyFiles */,
@@ -110,9 +119,9 @@
 			);
 			dependencies = (
 			);
-			name = SharePlugin;
-			productName = SharePlugin;
-			productReference = 90CAAA9424E71FF10013969F /* libSharePlugin.a */;
+			name = share_plugin;
+			productName = share_plugin;
+			productReference = 90CAAA9424E71FF10013969F /* libshare_plugin.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -121,16 +130,16 @@
 		90CAAA8C24E71FF10013969F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = Godot;
 				TargetAttributes = {
 					90CAAA9324E71FF10013969F = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1230;
 					};
 				};
 			};
-			buildConfigurationList = 90CAAA8F24E71FF10013969F /* Build configuration list for PBXProject "SharePlugin" */;
+			buildConfigurationList = 90CAAA8F24E71FF10013969F /* Build configuration list for PBXProject "share_plugin" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -143,13 +152,13 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				90CAAA9324E71FF10013969F /* SharePlugin */,
+				90CAAA9324E71FF10013969F /* share_plugin */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E26E701D19584026D1F30A1F /* [CP] Check Pods Manifest.lock */ = {
+		DD9BF3CC2255FDE9321FE7D1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -164,7 +173,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SharePlugin-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-share_plugin-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -178,7 +187,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0793DB442ECC5D6B00679D5D /* ActiveViewController.swift in Sources */,
 				90CAAAA424E724C50013969F /* share_plugin_implementation.mm in Sources */,
+				515DBA0925EE9E1E00187A4B /* Share.swift in Sources */,
 				90CAAA9924E71FF10013969F /* share_plugin.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,7 +203,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -212,7 +223,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -223,7 +233,6 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -238,7 +247,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -252,7 +261,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -272,7 +281,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -283,7 +291,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -292,7 +299,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -302,30 +309,25 @@
 		};
 		90CAAA9E24E71FF10013969F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D81D34EAF997FFC79223B20 /* Pods-SharePlugin.debug.xcconfig */;
+			baseConfigurationReference = 403D7C7BCFBA671DEF15AE95 /* Pods-share_plugin.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/godot",
-					"$(SRCROOT)/godot/main",
-					"$(SRCROOT)/godot/core",
-					"$(SRCROOT)/godot/core/os",
-					"$(SRCROOT)/godot/servers",
-					"$(SRCROOT)/godot/platform",
 					"$(SRCROOT)/godot/platform/ios",
-					"$(SRCROOT)/godot/modules",
-					"$(SRCROOT)/godot/scene",
-					"$(SRCROOT)/godot/drivers",
-					"$(SRCROOT)/godot/trirdparty",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/godot/bin",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-fcxx-modules",
 					"-g",
 					"-DDEBUG",
 					"-DDEBUG_ENABLED",
@@ -333,51 +335,124 @@
 					"-DDISABLE_FORCED_INLINE",
 					"-DTYPED_METHOD_BIND",
 					"-fmodules",
+					"-fobjc-arc",
+					"-fmessage-length=0",
+					"-fno-strict-aliasing",
+					"-fdiagnostics-print-source-range-info",
+					"-fdiagnostics-show-category=id",
+					"-fdiagnostics-parseable-fixits",
+					"-fpascal-strings",
+					"-fblocks",
+					"-fvisibility=hidden",
+					"-MMD",
+					"-MT",
+					"-fno-exceptions",
+					"-Wno-ambiguous-macro",
+					"-Wall",
+					"-Werror=return-type",
+					"-DPTRCALL_ENABLED",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fcxx-modules",
+					"-gdwarf-2",
+					"-O0",
+					"-DDEBUG_MEMORY_ALLOC",
+					"-DDISABLE_FORCED_INLINE",
+					"-D_DEBUG",
+					"-DDEBUG=1",
+					"-DDEBUG_ENABLED",
+					"-DVERSION_4_0",
+					"-DIOS_ENABLED",
+					"-DNEED_LONG_INT",
+					"-DLIBYUV_DISABLE_NEON",
+					"-DIPHONE_ENABLED",
+					"-DUNIX_ENABLED",
+					"-DCOREAUDIO_ENABLED",
 				);
 				OTHER_LDFLAGS = (
-					"$(inherited)",
 					"-ObjC",
+					"-framework", "os",
+					"-lswiftCore",
+					"-lswiftDispatch",
+					"-lswiftObjectiveC",
+					"-lswiftUIKit",
+					"-lswiftFoundation",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "share/share_plugin-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		90CAAA9F24E71FF10013969F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5FBC74EE68B1374C28F1A0BD /* Pods-SharePlugin.release.xcconfig */;
+			baseConfigurationReference = 1A3D1E30D9DC57319C20B62B /* Pods-share_plugin.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/godot",
-					"$(SRCROOT)/godot/main",
-					"$(SRCROOT)/godot/core",
-					"$(SRCROOT)/godot/core/os",
-					"$(SRCROOT)/godot/servers",
-					"$(SRCROOT)/godot/platform",
 					"$(SRCROOT)/godot/platform/ios",
-					"$(SRCROOT)/godot/modules",
-					"$(SRCROOT)/godot/scene",
-					"$(SRCROOT)/godot/drivers",
-					"$(SRCROOT)/godot/trirdparty",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/godot/bin",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-fcxx-modules",
 					"-fmodules",
+					"-fobjc-arc",
+					"-fmessage-length=0",
+					"-fno-strict-aliasing",
+					"-fdiagnostics-print-source-range-info",
+					"-fdiagnostics-show-category=id",
+					"-fdiagnostics-parseable-fixits",
+					"-fpascal-strings",
+					"-fblocks",
+					"-fvisibility=hidden",
+					"-MMD",
+					"-MT",
+					"-fno-exceptions",
+					"-Wno-ambiguous-macro",
+					"-Wall",
+					"-Werror=return-type",
+					"-DPTRCALL_ENABLED",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fcxx-modules",
+					"-O2",
+					"-ftree-vectorize",
+					"-DNDEBUG",
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"-DVERSION_4_0",
+					"-DIOS_ENABLED",
+					"-DNEED_LONG_INT",
+					"-DLIBYUV_DISABLE_NEON",
+					"-DIPHONE_ENABLED",
+					"-DUNIX_ENABLED",
+					"-DCOREAUDIO_ENABLED",
 				);
 				OTHER_LDFLAGS = (
-					"$(inherited)",
 					"-ObjC",
+					"-framework", "os",
+					"-lswiftCore",
+					"-lswiftDispatch",
+					"-lswiftObjectiveC",
+					"-lswiftUIKit",
+					"-lswiftFoundation",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "share/share_plugin-Bridging-Header.h";
+				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -385,7 +460,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		90CAAA8F24E71FF10013969F /* Build configuration list for PBXProject "SharePlugin" */ = {
+		90CAAA8F24E71FF10013969F /* Build configuration list for PBXProject "share_plugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				90CAAA9B24E71FF10013969F /* Debug */,
@@ -394,7 +469,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		90CAAA9D24E71FF10013969F /* Build configuration list for PBXNativeTarget "SharePlugin" */ = {
+		90CAAA9D24E71FF10013969F /* Build configuration list for PBXNativeTarget "share_plugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				90CAAA9E24E71FF10013969F /* Debug */,

@@ -7,11 +7,15 @@ package org.godotengine.plugin.android.share.model;
 import org.godotengine.godot.Dictionary;
 
 public class SharedData {
+	// Threshold (ms) to consider a share to be completed upon returning to app.
+	private static final long DEFAULT_RESUMPTION_FROM_SHARE_THRESHOLD_MS = 5000L;
+
 	private static String DATA_KEY_TITLE = "title";
 	private static String DATA_KEY_SUBJECT = "subject";
 	private static String DATA_KEY_CONTENT = "content";
 	private static String DATA_KEY_FILE_PATH = "file_path";
 	private static String DATA_KEY_MIME_TYPE = "mime_type";
+	private static String DATA_KEY_CUSTOM_THRESHOLD_MS = "custom_threshold";
 
 	private Dictionary data;
 
@@ -37,5 +41,11 @@ public class SharedData {
 
 	public String getMimeType() {
 		return (String) data.get(DATA_KEY_MIME_TYPE);
+	}
+
+	public long getThreshold() {
+		return data.containsKey(DATA_KEY_CUSTOM_THRESHOLD_MS) ?
+				(long) data.get(DATA_KEY_CUSTOM_THRESHOLD_MS) :
+				DEFAULT_RESUMPTION_FROM_SHARE_THRESHOLD_MS;
 	}
 }

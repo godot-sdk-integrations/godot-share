@@ -73,3 +73,6 @@ script = ExtResource("3_i1lxr")
 
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/VBoxContainer/ShareTextureButton" to="." method="_on_share_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/VBoxContainer/ShareViewportButton" to="." method="_on_share_viewport_button_pressed"]
+[connection signal="share_canceled" from="Share" to="." method="_on_share_share_canceled"]
+[connection signal="share_completed" from="Share" to="." method="_on_share_share_completed"]
+[connection signal="share_failed" from="Share" to="." method="_on_share_share_failed"]

@@ -72,9 +72,8 @@ body:
     options:
       - "5.0"
       - "5.1"
-      - "5.2"
       - Other
-    default: 2
+    default: 1
   validations:
     required: true
 - type: dropdown
