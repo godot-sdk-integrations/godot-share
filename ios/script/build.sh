@@ -505,8 +505,27 @@ function create_zip_archive()
 		exit 1
 	fi
 
-	mkdir -p $tmp_directory/ios/framework
-	find $PODS_DIR -iname '*.xcframework' -type d -exec cp -r {} $tmp_directory/ios/framework \;
+	# Locate files and print their paths separated by a null character.
+	found_files=$(find "$PODS_DIR" -iname '*.xcframework' -type d -print0)
+
+	# Check if the 'found_files' variable is NOT empty.
+	# -z checks if the string is zero length (empty). We check for the opposite (! -z).
+	if [ ! -z "$found_files" ]; then
+
+		echo_green "Frameworks found in $PODS_DIR. Creating destination directory..."
+
+		mkdir -p "$tmp_directory/ios/framework"
+
+		# Process the null-delimited list of files.
+		while IFS= read -r -d $'\0' item; do
+			if [ -n "$item" ]; then
+				echo_green "Copying framework: $item"
+				cp -r "$item" "$tmp_directory/ios/framework"
+			fi
+		done <<< "$found_files" # Redirects the variable content into the loop.
+	else
+		display_warning "No .xcframework items found in $PODS_DIR. Skipping directory creation and copy operation."
+	fi
 
 	cp -r $FRAMEWORK_DIR/$PLUGIN_NAME.{release,debug}.xcframework $tmp_directory/ios/plugins
 

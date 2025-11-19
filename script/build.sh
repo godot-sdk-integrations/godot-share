@@ -166,10 +166,9 @@ function create_multi_platform_archive()
 		mkdir -p $tmp_directory/ios/plugins
 		cp -r $DEMO_DIR/ios/plugins/* $tmp_directory/ios/plugins
 
-		mkdir -p $tmp_directory/ios/framework
-
 		# Check if the directory exists AND find can locate at least one entry inside
 		if [ -d "$DEMO_DIR/ios/framework" ] && find "$DEMO_DIR/ios/framework" -mindepth 1 -print -quit 2>/dev/null | grep -q .; then
+			mkdir -p $tmp_directory/ios/framework
 			cp -r "$DEMO_DIR/ios/framework/"* "$tmp_directory/ios/framework"
 		else
 			display_warning "Skipping copy: $DEMO_DIR/ios/framework is empty or does not exist."
