@@ -107,17 +107,6 @@ Add a `Share` node to your scene and follow the following steps:
 
 ---
 
-# <img src="addon/icon.png" width="24"> iOS Share Plugin
-
-<p align="center">
-	<img width="256" height="256" src="demo/assets/share-ios.png">
-</p>
-
-## [iOS-specific Documentation](ios/README.md)
-## [AssetLib Entry](https://godotengine.org/asset-library/asset/2907)
-
----
-
 <a name="all-plugins"></a>
 
 # <img src="addon/icon.png" width="24"> All Plugins
