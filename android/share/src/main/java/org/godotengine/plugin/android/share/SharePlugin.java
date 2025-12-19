@@ -129,6 +129,8 @@ public class SharePlugin extends GodotPlugin {
 		chooserAction = activity.getPackageName() + ".CHOOSER_TARGET_SELECTED." + System.currentTimeMillis();
 
 		Intent callbackIntent = new Intent(chooserAction);
+		// Set package to make intent explicit (required for FLAG_MUTABLE on Android 14+)
+		callbackIntent.setPackage(activity.getPackageName());
 
 		int flags = PendingIntent.FLAG_UPDATE_CURRENT;
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {  // API 31+ requires explicit mutability
@@ -194,7 +196,13 @@ public class SharePlugin extends GodotPlugin {
 		};
 
 		try {
-			activity.registerReceiver(chooserReceiver, new IntentFilter(chooserAction));
+			IntentFilter filter = new IntentFilter(chooserAction);
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+				// Android 14+ requires explicit receiver export flag
+				activity.registerReceiver(chooserReceiver, filter, Context.RECEIVER_NOT_EXPORTED);
+			} else {
+				activity.registerReceiver(chooserReceiver, filter);
+			}
 		} catch (Exception e) {
 			Log.w(LOG_TAG, "Failed to register chooser receiver: " + e.getMessage());
 			chooserReceiver = null;
