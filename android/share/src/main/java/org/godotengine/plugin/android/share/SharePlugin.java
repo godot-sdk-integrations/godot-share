@@ -172,12 +172,12 @@ public class SharePlugin extends GodotPlugin {
 
 				ComponentName chosen = null;
 				try {
-					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-						// API 33+
+					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {	// API 33+
 						chosen = intent.getParcelableExtra(Intent.EXTRA_CHOSEN_COMPONENT, ComponentName.class);
 					} else {
-						// older APIs
-						chosen = intent.getParcelableExtra(Intent.EXTRA_CHOSEN_COMPONENT);
+						@SuppressWarnings("deprecation")
+						ComponentName deprecatedChosen = intent.getParcelableExtra(Intent.EXTRA_CHOSEN_COMPONENT);
+						chosen = deprecatedChosen;
 					}
 				} catch (Exception e) {
 					Log.w(LOG_TAG, "Error reading chosen component: " + e.getMessage());
